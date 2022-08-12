@@ -6,4 +6,6 @@ pandas
 PyYaml
 evidently
 dill
+neuro-mf==0.0.4
+matplotlib
 -e .

@@ -77,12 +77,6 @@ class DataValidation:
         except Exception as e:
             raise HousingException(e,sys) from e
 
-    def is_data_drift_found(self)->bool:
-        try:
-            pass
-        except Exception as e:
-            raise HousingException(e,sys) from e
-
     def get_and_save_data_drift_report(self):
         try:
             self.is_train_test_file_exists()
@@ -145,3 +139,6 @@ class DataValidation:
             return data_validation_artifact
         except Exception as e:
             raise HousingException(e,sys) from e
+
+        def __del__(self):
+            logging.info(f"{'>>'*20}Data Valdaition log completed.{'>>'*20} \n\n")

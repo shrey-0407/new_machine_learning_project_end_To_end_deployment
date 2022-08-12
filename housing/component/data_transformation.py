@@ -3,8 +3,6 @@ from housing.logger import logging
 from housing.entity.config_entity import DataTransformationConfig 
 from housing.entity.artifact_entity import DataIngestionArtifact, DataTransformationArtifact,\
 DataValidationArtifact
-from housing.util.util import read_yaml_file
-DataValidationArtifact,DataTransformationArtifact
 import sys,os
 import numpy as np
 from sklearn.base import BaseEstimator,TransformerMixin
@@ -14,7 +12,7 @@ from sklearn.compose import ColumnTransformer
 from sklearn.impute import SimpleImputer
 import pandas as pd
 from housing.constant import *
-#from housing.util.util import read_yaml_file,save_object,save_numpy_array_data,load_data
+from housing.util.util import read_yaml_file,save_object,save_numpy_array_data,load_data
 
 #   longitude: float
 #   latitude: float
@@ -92,14 +90,13 @@ class DataTransformation:
                  data_validation_artifact: DataValidationArtifact
                  ):
         try:
-            logging.info(f"{'=' * 20}Data Transformation log started.{'=' * 20} ")
+            logging.info(f"{'>>' * 20}Data Transformation log started.{'<<' * 20} ")
             self.data_transformation_config= data_transformation_config
             self.data_ingestion_artifact = data_ingestion_artifact
             self.data_validation_artifact = data_validation_artifact
 
         except Exception as e:
             raise HousingException(e,sys) from e 
-            raise HousingException(e,sys) from e
 
 
 
@@ -141,7 +138,7 @@ class DataTransformation:
             return preprocessing
 
         except Exception as e:
-            raise HousingException(e,sys) from e   
+            raise HousingException(e,sys) from e     
 
 
     def initiate_data_transformation(self)->DataTransformationArtifact:
@@ -216,4 +213,4 @@ class DataTransformation:
             raise HousingException(e,sys) from e
 
     def __del__(self):
-        logging.info(f"{'='*20}Data Transformation log completed.{'='*20} \n\n")
+        logging.info(f"{'>>'*20}Data Transformation log completed.{'<<'*20} \n\n")
