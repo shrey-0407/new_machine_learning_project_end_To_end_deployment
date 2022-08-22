@@ -10,7 +10,7 @@ Application URL : [InsurancePremiumPredictor](https://ml-regressor-insurance.her
 <!-- * [License](#license) -->
 
 ## About project
-This app predicts Insurance premium price based on some data.
+This app predicts Housing price based on some data.
 
 
 ## Technologies 💙
