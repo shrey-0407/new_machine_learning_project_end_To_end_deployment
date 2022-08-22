@@ -1,5 +1,6 @@
-Application URL : [InsurancePremiumPredictor](https://ml-regressor-insurance.herokuapp.com/)
+Application URL : [HousingPricePrediction](https://ml-regressor-app01.herokuapp.com/)
 
+California Housing Price Estimation
 
 ## Table of contents
 * [About project](#about-project)
